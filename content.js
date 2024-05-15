@@ -1,7 +1,8 @@
 setInterval(() => {
   const skipButton =
     document.getElementsByClassName("ytp-ad-skip-button-modern") ||
-    document.getElementsByClassName("ytp-ad-skip-button");
+    document.getElementsByClassName("ytp-ad-skip-button") ||
+    document.getElementsByClassName("ytp-skip-ad-button");
   if (skipButton != undefined && skipButton.length > 0) {
     skipButton[0].click();
     chrome.storage.local.get(["adSkipped"], function (result) {
